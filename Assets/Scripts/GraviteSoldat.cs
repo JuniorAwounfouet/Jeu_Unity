@@ -6,18 +6,21 @@ public class GraviteSoldat : MonoBehaviour
 {
     private GameObject cubeG;
     private float diffY;
+
+    [Tooltip("Yeah")]
+    public GameObject Bullet;
     // Start is called before the first frame update
     void Start()
     {
-        cubeG = GameObject.Find("GravityCube");
-        diffY = cubeG.transform.position.y - this.transform.position.y;
+        /*cubeG = GameObject.Find("GravityCube");
+        diffY = cubeG.transform.position.y - this.transform.position.y;*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        float y = cubeG.transform.position.y;
+       /* float y = cubeG.transform.position.y;
         cubeG.transform.position = new Vector3(this.transform.position.x, y, this.transform.position.z);
-        this.transform.position = new Vector3(this.transform.position.x, y - diffY, this.transform.position.z);
+        this.transform.position = new Vector3(this.transform.position.x, y - diffY, this.transform.position.z);*/
     }
 }
