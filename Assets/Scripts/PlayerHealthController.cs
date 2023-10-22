@@ -23,13 +23,14 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         /*currentHealth = maxHealth;*/
+
+        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIController.instance.healthSlider.value = currentHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentHealth);
-
         if (invincCounter > 0)
         {
             invincCounter -= Time.deltaTime;
@@ -44,5 +45,8 @@ public class PlayerHealthController : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+
+        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIController.instance.healthSlider.value = currentHealth;
     }
 }

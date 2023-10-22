@@ -30,6 +30,8 @@ public class HealthPickup : MonoBehaviour
 
             PlayerHealthController.instance.HealPlayer(healAmount);
 
+            /*UIController.HealthBar += 50;*/
+
             Object.Destroy(gameObject);
         }
     }
