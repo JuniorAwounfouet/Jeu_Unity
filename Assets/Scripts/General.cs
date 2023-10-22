@@ -25,8 +25,9 @@ public class General : MonoBehaviour
     private NavMeshAgent Soldat1;
     private NavMeshAgent Soldat2;
     private NavMeshAgent Soldat3;
+
     private NavMeshAgent Zoombie;
-    // Start is called before the first frame update
+
     void Start()
     {
 

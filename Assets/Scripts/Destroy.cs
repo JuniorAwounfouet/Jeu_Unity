@@ -27,7 +27,7 @@ public class Destroy : MonoBehaviour
             if ((Physics.Raycast(ray, out hit))&& hit.transform.tag == "Dummie")
             {
                 CapsuleCollider cc = hit.collider as CapsuleCollider;
-                Debug.Log(hit.collider.GetComponent<NavMeshAgent>().name);
+                /*Debug.Log(hit.collider.GetComponent<NavMeshAgent>().name);*/
                 if (cc != null)
                 {
                     //NavMeshAgent navMeshAgent = hit.collider.GetComponent<NavMeshAgent>();

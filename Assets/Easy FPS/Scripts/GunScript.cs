@@ -32,6 +32,12 @@ public class GunScript : MonoBehaviour {
 
 	private PlayerMovementScript pmS;
 
+	/**
+	 * MY OWN 
+	*/
+	public bool isReloading;
+
+
 	/*
 	 * Collection the variables upon awake that we need.
 	 */
@@ -505,6 +511,9 @@ public class GunScript : MonoBehaviour {
 			}
 
 		}
+
+		yield return new WaitForSeconds(reloadChangeBulletsTime);
+		isReloading = false;
 	}
 
 	/*

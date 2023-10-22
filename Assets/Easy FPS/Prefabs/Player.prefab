@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97308ddfdff1d496cb759a41c819b13f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthPoint: 550
   currentSpeed: 0
   cameraMain: {fileID: 0}
   jumpForce: 15000
