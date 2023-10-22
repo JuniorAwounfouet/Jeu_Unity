@@ -8,11 +8,12 @@ public class UIController : MonoBehaviour
     public static UIController instance;
 
     //======================== HEALTH
-    [Header("Health properties")]
+    [Header("Health UI")]
     public Slider healthSlider;
     public Text healthText;
 
     //======================== SCREEN
+    [Header("Screens")]
     public GameObject pauseScreen;
 
     public void Awake()
