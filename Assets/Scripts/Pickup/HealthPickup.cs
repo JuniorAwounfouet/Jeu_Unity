@@ -22,8 +22,6 @@ public class HealthPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision");
-
         if(other.tag == "Player" && !isCollected)
         {
             Debug.Log("Is the player");
