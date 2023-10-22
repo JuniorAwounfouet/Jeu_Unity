@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.AI;
+using Unity.VisualScripting;
 
 public class BulletScript : MonoBehaviour {
 
@@ -15,12 +17,16 @@ public class BulletScript : MonoBehaviour {
 	[Tooltip("Put Weapon layer and Player layer to ignore bullet raycast.")]
 	public LayerMask ignoreLayer;
 
-	/*
+	[Tooltip("The enemy to destroy.")]
+	public GameObject Soldat;
+
+
+    /*
 	* Uppon bullet creation with this script attatched,
 	* bullet creates a raycast which searches for corresponding tags.
 	* If raycast finds somethig it will create a decal of corresponding tag.
 	*/
-	void Update () {
+    void Update () {
 
 		if(Physics.Raycast(transform.position, transform.forward,out hit, maxDistance, ~ignoreLayer)){
 			if(decalHitWall){
@@ -30,12 +36,22 @@ public class BulletScript : MonoBehaviour {
 				}
 				if(hit.transform.tag == "Dummie"){
 					Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+					/*Debug.Log(hit.collider.GetComponent<NavMeshAgent>().name);	*/
 					Destroy(gameObject);
+					//Destroy(hit.collider.GetComponent<NavMeshAgent>());
 				}
 			}		
 			Destroy(gameObject);
 		}
 		Destroy(gameObject, 0.1f);
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Dummie"))
+		{
+			Destroy(Soldat);
+		}
+    }
 
 }
