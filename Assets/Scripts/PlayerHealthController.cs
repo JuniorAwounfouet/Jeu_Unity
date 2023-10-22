@@ -24,8 +24,9 @@ public class PlayerHealthController : MonoBehaviour
     {
         /*currentHealth = maxHealth;*/
 
-        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString() + " ";
         UIController.instance.healthSlider.value = currentHealth;
+        UIController.instance.healthSlider.maxValue = maxHealth;
     }
 
     // Update is called once per frame
@@ -46,7 +47,7 @@ public class PlayerHealthController : MonoBehaviour
             currentHealth = maxHealth;
         }
 
-        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString() + " ";
         UIController.instance.healthSlider.value = currentHealth;
     }
 }

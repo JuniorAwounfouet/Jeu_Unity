@@ -12,6 +12,9 @@ public class UIController : MonoBehaviour
     public Slider healthSlider;
     public Text healthText;
 
+    //======================== SCREEN
+    public GameObject pauseScreen;
+
     public void Awake()
     {
         instance = this;
