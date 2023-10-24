@@ -8,6 +8,7 @@ public class EnemyHealthController : MonoBehaviour
     public int maxHealth, currentHealth;
     public int maxHitCount, currentHitCount;
     public GameObject blood;
+    public int vague; 
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,11 @@ public class EnemyHealthController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+       destruct();
+    }
+
+    public void destruct()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -45,6 +51,7 @@ public class EnemyHealthController : MonoBehaviour
                     {
                         // Si le compteur de clics atteint 2, détruisez l'objet
                         Destroy(cc.gameObject);
+                        vague++;
                         for (int i = 0; i < 10; i++)
                         {
                             Instantiate(blood, hit.point, Quaternion.LookRotation(hit.normal));

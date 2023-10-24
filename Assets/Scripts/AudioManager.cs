@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ambientMusic.Play();
+        //ambientMusic.Play();
     }
 
     // Update is called once per frame
