@@ -1,4 +1,4 @@
-public class SceneNames
+public class SceneName
 {
     public static string MainMenu { get { return "MainMenu"; } }
     public static string FirstLevel { get { return "FirstLevel"; } }

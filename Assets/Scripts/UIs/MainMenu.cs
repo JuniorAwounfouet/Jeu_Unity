@@ -19,7 +19,17 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneNames.Test);
+        StartCoroutine(PlayGameCoroutine());
+    }
+
+    private IEnumerator PlayGameCoroutine()
+    {
+        AudioManager.instance.PlayMusic(SoundName.EndIntro, false);
+
+        while (AudioManager.instance.musicSrc.isPlaying)
+            yield return null;
+
+        SceneManager.LoadScene(SceneName.Test);
     }
 
     public void QuitGame()
